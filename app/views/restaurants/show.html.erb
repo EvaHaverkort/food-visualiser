@@ -1,0 +1,13 @@
+<%# we're gonna show the menus here, this is the show of a restaurant %>
+<h1>Your Menus</h1>
+
+<% @menus_of_restaurant.each do |menu| %>
+<div class = "card border-succes mb-3">
+<p class="card-title"><strong>Name: </strong><%=menu.name%></p>
+<p class="card-subtitle mb-2 text-muted"><strong>Active: </strong><%=menu.active%></p>
+<p class="card-subtitle mb-2 text-muted"><strong>Start-date menu: </strong><%=menu.date%></p>
+<%= link_to "See menu items", restaurant_path(:id), class: "btn btn-outline-primary"%>
+</div>
+<%end%>
+
+<%= link_to "Add menu", new_restaurant_menu_path(:restaurant_id), class: "btn btn-outline-primary"%>

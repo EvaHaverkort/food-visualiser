@@ -1,0 +1,14 @@
+<h1>Your Restaurants</h1>
+
+<% @restaurants.each do |restaurant| %>
+<div class = "card border-succes mb-3">
+<p class="card-title"><strong>Name: </strong><%=restaurant.name%></p>
+<p class="card-subtitle mb-2 text-muted"><strong>Address: </strong><%=restaurant.address%></p>
+<p class="card-subtitle mb-2 text-muted"><strong>Owner: </strong><%=restaurant.owner%></p>
+<%= link_to "See menus", restaurant_path(restaurant), class: "btn btn-outline-primary"%>
+</div>
+<%end%>
+
+<br>
+<br>
+<%= link_to "New restaurant", new_restaurant_path, class: "btn btn-outline-primary"%>
